@@ -98,6 +98,7 @@ router.get('/fetchallnotes', async (req, res) => {
         const notes = await Note.find();
         return res.json({ notes, success:true });
     } catch (error) {
+        console.log(error);
         return res.status(500).json({ err: "It's fault on our server's side" })
     }
 
